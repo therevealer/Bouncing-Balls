@@ -17,7 +17,23 @@ addEventListener('mousemove', function(event){
     mouseY = event.clientY
 });
 
-let grav = 0.99;
+// Setting global varaibles
+let gravity = 0.99;
+dimension.strokeWidth = 5; 
+
+
+// Setting the RGBA function for the balls
+function randomColor (){
+    return(
+        'rgba(' + math.random() * 250 +
+         ',' + 
+         math.random() * 250 +
+         ',' +
+         math.random() * 250 +
+         ',' +
+    
+    )
+}
 
 
 
