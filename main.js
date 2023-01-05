@@ -23,7 +23,6 @@ addEventListener('mousemove', function(event){
 });
 
 
-
 // Setting the RGBA color for the balls
 function randomColor (){
     return(
@@ -45,10 +44,21 @@ function Ball(){
     this.color = randomColor();
     this.radius = Math.random() * 20 + 14;
     this.startRadius = this.radius;
-    this.width = Math.random() * (mainWidth - this.radius * 2)
+    this.xcoordinate = Math.random() * (mainWidth - this.radius * 2) + this.radius;
+    this.ycoordinate = Math.random() * (mainHeight - this.radius);
+    this.dx = Math.random((Math.random() - 0.5) * 10);
+    this.dy = Math.random() * 2;
+    this.vel = Math.random() / 5;
+    this.update = function() {
+        dimension.beginPath();
+        dimension.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+        dimension.fillStyle = this.color;
+        dimension.fill();
+    };
 }
 
-console.log(Math.ceil(Math.random() * 10)/ 10) 
+
+
 
 
 
