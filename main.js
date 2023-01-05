@@ -1,4 +1,9 @@
 
+// Setting global variables
+let gravity = 0.99;
+dimension.strokeWidth = 5; // check for bugs
+
+
 // Setting up canvas in the browser.
 let canvas = document.getElementById('canvas');
 let dimension = canvas.getContext('2d');
@@ -17,23 +22,35 @@ addEventListener('mousemove', function(event){
     mouseY = event.clientY
 });
 
-// Setting global varaibles
-let gravity = 0.99;
-dimension.strokeWidth = 5; 
 
 
-// Setting the RGBA function for the balls
+// Setting the RGBA color for the balls
 function randomColor (){
     return(
-        'rgba(' + math.random() * 250 +
+        'rgba(' + Math.round(Math.random() * 250) +
          ',' + 
-         math.random() * 250 +
+         Math.round(Math.random() * 250) +
          ',' +
-         math.random() * 250 +
+         Math.round(Math.random() * 250)+
          ',' +
+         console.log(Math.ceil(Math.random() * 10)/ 10)  +
+         ')'
     
-    )
+    );
+};
+
+
+// Setting up the constructor function for the ball object!
+function Ball(){
+    this.color = randomColor();
+    this.radius = Math.random() * 20 + 14;
+    this.startRadius = this.radius;
+    this.width = Math.random() * (mainWidth - this.radius * 2)
 }
+
+console.log(Math.ceil(Math.random() * 10)/ 10) 
+
+
 
 
 
